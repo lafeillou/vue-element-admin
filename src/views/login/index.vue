@@ -5,7 +5,7 @@
         <h3 class="title">
           {{ $t('login.title') }}
         </h3>
-        <lang-select class="set-language" />
+        <!-- <lang-select class="set-language" /> -->
       </div>
 
       <el-form-item prop="username">
@@ -42,7 +42,7 @@
         {{ $t('login.logIn') }}
       </el-button>
 
-      <div style="position:relative">
+      <!-- <div style="position:relative">
         <div class="tips">
           <span>{{ $t('login.username') }} : admin</span>
           <span>{{ $t('login.password') }} : {{ $t('login.any') }}</span>
@@ -57,7 +57,7 @@
         <el-button class="thirdparty-button" type="primary" @click="showDialog=true">
           {{ $t('login.thirdparty') }}
         </el-button>
-      </div>
+      </div> -->
     </el-form>
 
     <el-dialog :title="$t('login.thirdparty')" :visible.sync="showDialog">
@@ -72,12 +72,14 @@
 
 <script>
 import { validUsername } from '@/utils/validate'
-import LangSelect from '@/components/LangSelect'
-import SocialSign from './socialsignin'
+// import LangSelect from '@/components/LangSelect'
+// import SocialSign from './socialsignin'
 
 export default {
   name: 'Login',
-  components: { LangSelect, SocialSign },
+  // 暂时不需要支持国际化 和 第三方登录组件
+  // components: { LangSelect, SocialSign },
+  components: {},
   data() {
     const validateUsername = (rule, value, callback) => {
       if (!validUsername(value)) {
